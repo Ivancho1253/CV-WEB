@@ -4,11 +4,15 @@
 }
 
 /*Cambiar el backGround*/
+body{
+    
+    background-color: hsl(211, 75%, 81%);
+}
 
 #titulo{
-    color: red;
+    color: #000000;
 }
 
 p.texto {
-    color: green;
+    color: rgb(0, 0, 0);
 }
