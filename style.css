@@ -1,18 +1,101 @@
-*{
-    /*Cambiar la fuente de las letras a una mas amigables*/
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+    color: #333;
+  }
+  
+  .container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 20px;
+  }
+  
+  .info {
+    flex: 1;
+  }
+  
+  .info h1 {
+    margin: 0;
+    font-size: 2.2em;
+    color: #2c3e50;
+  }
+  
+  .info p {
+    margin: 5px 0;
+    color: #555;
+  }
+  
+  .photo-placeholder {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+  }
+  
+  section {
+    margin-top: 30px;
+  }
+  
+  section h2 {
+    border-left: 5px solid #3498db;
+    padding-left: 10px;
+    color: #3498db;
+    font-size: 1.4em;
+  }
+  
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  ul li {
+    margin-bottom: 10px;
+  }
+  
+  .icons a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #3498db;
+    font-size: 1.2em;
+  }
+  
+  .photo img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 60%;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
 }
 
-/*Cambiar el backGround*/
-body{
-    
-    background-color: hsl(211, 75%, 81%);
+/*Modificar tamaño boton*/
+.social button {
+  padding: 10px 20px;
+  background-color: #3498db;
+  border: none;
+  border-radius: 6px;
+  color: #488bb2;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 19px;
 }
-
-#titulo{
-    color: #000000;
-}
-
-p.texto {
-    color: rgb(0, 0, 0);
-}
+  
