@@ -115,3 +115,63 @@ a i {
 a i:hover {
   color: #3498db;        /* Cambia el color al pasar el mouse */
 }
+
+
+/*AJUSTE PARA MOBILES/*-----------------/*-----------------/*-----------------/*-----------------*/
+/* ------------------------------
+   Mobile first: ajustes para <600px
+------------------------------- */
+
+@media (max-width: 600px) {
+  /* 1. Contenedor más estrecho y con menos padding */
+  .container {
+    margin: 20px auto;
+    padding: 20px;
+  }
+
+  /* 2. Header en columna y centrado */
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* 3. Titular y texto ajustados */
+  .info h1 {
+    font-size: 1.6em;    /* de 2.2em baja a 1.6em */
+  }
+  .info p {
+    font-size: 0.9em;    /* texto un poco más chico */
+  }
+
+  /* 4. Foto más pequeña */
+  .photo-placeholder,
+  .photo img {
+    width: 50px;        /* antes 120px/180px */
+    height: 50px;
+  }
+
+  /* 5. Secciones con menos espacio */
+  section {
+    margin-top: 20px;
+  }
+  section h2 {
+    font-size: 1.2em;    /* de 1.4em a 1.2em */
+    padding-left: 8px;   /* de 10px a 8px */
+  }
+
+  /* 6. Íconos y botones más manejables */
+  .icons a {
+    font-size: 1.4em;    /* de 1.2em a 1.4em para mejor tactilidad */
+    margin-right: 10px;
+  }
+  .social button {
+    padding: 8px 16px;
+    font-size: 0.9em;
+  }
+
+  /* 7. Fondo: opcional cambiar a `cover` en móvil para no dejar franjas */
+  body {
+    background-size: cover;
+  }
+}

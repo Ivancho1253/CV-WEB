@@ -1,0 +1,130 @@
+/* 1. Reset & Tipografía */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: url('https://i.gifer.com/1kc1.gif');
+    background-size: contain;
+    color: #333;
+  }
+  
+  .container {
+    max-width: 900px;
+    margin: 10px auto;
+    background: #fff;
+    padding: 50px ;
+    border-radius: 9px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* 3. Header */
+  header {
+    text-align: flex;          /* centrar título */
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 2em;
+    color: #2c3e50;
+  }
+  
+  /* 4. Secciones (curso, certificados, etc.) */
+  section {
+    margin-bottom: 30px;
+  }
+  section h2 {
+    border-left: 5px solid #3498db;
+    padding-left: 10px;
+    color: #3498db;
+    font-size: 1.4em;
+    margin-bottom: 15px;
+  }
+  
+  /* 5. Estilo de las imágenes de certificado */
+  .imagen-certificado {
+    max-width: 500px;    /* ajusta si quieres más pequeño */
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 ;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+/* Estilo de cuadro para el título de Certificados */
+.tituloCertificados {
+    display: inline-block;            /* Para que el fondo solo abarque el texto */
+    padding: 8px 16px;                /* Espacio interno */
+    background-color: #3498db;        /* Color de fondo */
+    color: #fff;                      /* Texto blanco */
+    border-radius: 6px;               /* Bordes redondeados */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);  /* Sombra suave */
+    margin-bottom: 20px;              /* Separación del resto */
+    font-size: 2.2em;                 /* Mantiene tu tamaño de fuente */
+  }
+
+  /* 6. Responsividad */
+  @media (max-width: 600px) {
+    .container {
+      margin: 20px;
+      padding: 20px;
+    }
+    header h1 {
+      font-size: 1.6em;
+    }
+    section h2 {
+      font-size: 1.2em;
+    }
+  }
+  
+  /*------------------------------------MOBILE STYLE------------------------------------*/
+
+  /* ------------------------------
+   Mobile: ajustes para <600px
+------------------------------- */
+@media (max-width: 600px) {
+  /* 1. Contenedor más estrecho y con menos padding */
+  .container {
+    margin: 20px auto;
+    padding: 20px;
+  }
+
+  /* 2. Header centrado en columna */
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* 3. Título principal más pequeño */
+  header h1 {
+    font-size: 1.6em;
+  }
+
+  /* 4. Secciones con menos espacio y títulos reducidos */
+  section {
+    margin-bottom: 20px;
+  }
+  section h2 {
+    font-size: 1.2em;
+    padding-left: 8px;
+    margin-bottom: 10px;
+  }
+
+  /* 5. Imagen de certificado más pequeña */
+  .imagen-certificado {
+    max-width: 250px;  /* antes 500px, ahora la mitad */
+    width: 100%;
+  }
+
+  /* 6. Cuadro de título de certificados centrado */
+  .tituloCertificados {
+    display: block;
+    width: max-content;
+    margin: 0 auto 20px;
+    font-size: 1.8em;  /* ajusta un poco hacia abajo */
+  }
+}
