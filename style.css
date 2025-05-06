@@ -1,177 +1,21 @@
+/* Fondo animado */
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: url('https://i.gifer.com/1kc1.gif');
-    background-size: contain;
-    color: #333;
-  }
-  
-  .container {
-    max-width: 900px;
-    margin: 40px auto;
-    background: #fff;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  }
-
-  .titulo{
-    color: #3498db;
-    font-size: 2.2em;
-    margin-bottom: 20px;
-  }
-
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #e0e0e0;
-    padding-bottom: 20px;
-  }
-  
-  .info {
-    flex: 1;
-  }
-  
-  .info h1 {
-    margin: 0;
-    font-size: 2.2em;
-    color: #2c3e50;
-  }
-  
-  .info p {
-    margin: 5px 0;
-    color: #555;
-  }
-  
-  .photo-placeholder {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    background: #ddd;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    color: #666;
-    text-align: center;
-  }
-  
-  section {
-    margin-top: 30px;
-  }
-  
-  section h2 {
-    border-left: 5px solid #3498db;
-    padding-left: 10px;
-    color: #3498db;
-    font-size: 1.4em;
-  }
-  
-  ul {
-    list-style: none;
-    padding-left: 0;
-  }
-  
-  ul li {
-    margin-bottom: 10px;
-  }
-  
-  .icons a {
-    margin-right: 15px;
-    text-decoration: none;
-    color: #3498db;
-    font-size: 1.2em;
-  }
-  
-  .photo img {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 60%;
-  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  background: url('https://i.gifer.com/1kc1.gif') no-repeat center center fixed;
+  background-size: cover;
 }
 
-/*Modificar tamaño boton*/
-.social button {
-  padding: 10px 20px;
-  background-color: #3498db;
-  border: none;
-  border-radius: 6px;
-  color: #488bb2;
-  font-size: 1em;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  font-size: 19px;
+/* Título principal */
+.titulo {
+  font-weight: 700;
 }
 
-a i {
-  font-size: 1.5em;      /* Tamaño del ícono */
-  color: #333;           /* Color del ícono */
-  transition: color 0.3s ease;
+/* Ajuste de lista sin bullets (si no usas list-unstyled de Bootstrap) */
+ul.list-unstyled {
+  padding-left: 0;
+  margin: 0;
 }
 
-a i:hover {
-  color: #3498db;        /* Cambia el color al pasar el mouse */
-}
-
-
-/*AJUSTE PARA MOBILES/*-----------------/*-----------------/*-----------------/*-----------------*/
-/* ------------------------------
-   Mobile first: ajustes para <600px
-------------------------------- */
-
-@media (max-width: 600px) {
-  /* 1. Contenedor más estrecho y con menos padding */
-  .container {
-    margin: 20px auto;
-    padding: 20px;
-  }
-
-  /* 2. Header en columna y centrado */
-  header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  /* 3. Titular y texto ajustados */
-  .info h1 {
-    font-size: 1.6em;    /* de 2.2em baja a 1.6em */
-  }
-  .info p {
-    font-size: 0.9em;    /* texto un poco más chico */
-  }
-
-  /* 4. Foto más pequeña */
-  .photo-placeholder,
-  .photo img {
-    width: 50px;        /* antes 120px/180px */
-    height: 50px;
-  }
-
-  /* 5. Secciones con menos espacio */
-  section {
-    margin-top: 20px;
-  }
-  section h2 {
-    font-size: 1.2em;    /* de 1.4em a 1.2em */
-    padding-left: 8px;   /* de 10px a 8px */
-  }
-
-  /* 6. Íconos y botones más manejables */
-  .icons a {
-    font-size: 1.4em;    /* de 1.2em a 1.4em para mejor tactilidad */
-    margin-right: 10px;
-  }
-  .social button {
-    padding: 8px 16px;
-    font-size: 0.9em;
-  }
-
-  /* 7. Fondo: opcional cambiar a `cover` en móvil para no dejar franjas */
-  body {
-    background-size: cover;
-  }
+/* Para el caso de que quieras un poco de translucidez en el contenedor */
+.container {
+  background: rgba(255,255,255,0.95);
 }

@@ -4,115 +4,106 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Currículum de Iván Cabrera</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet"/>
-  <script src="https://kit.fontawesome.com/4241db501e.js" crossorigin="anonymous"></script>
-  <link rel="icon" href="../images/iconocv.png">
 
+  <!-- Bootstrap CSS local -->
+  <link 
+    rel="stylesheet" 
+    href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+  />
+  <!-- Tus estilos personalizados -->
+  <link rel="stylesheet" href="style.css" />
+
+  <script src="https://kit.fontawesome.com/4241db501e.js" crossorigin="anonymous"></script>
 </head>
-<body>
-  <div class="container">
-    <header>
-      <div class="info">
-        <h1 class="titulo">Iván Gonzalo Cabrera</h1>
-        <p><i class="fas fa-map-marker-alt"></i> Corrientes, Argentina</p>
-        <p><i class="fas fa-phone"></i> +54 3718-506984</p>
-        <p><i class="fas fa-envelope"></i> ivangonzalo1253@gmail.com</p>
-        <div class="icons">
-          <a href="https://www.linkedin.com/in/ivan-cabrera-128a60281/" target="_blank">
-            <i class="fab fa-linkedin"></i>
+<body class="bg-dark">
+
+  <div class="container my-5 p-4 bg-white rounded shadow-lg">
+    
+    <!-- Header como fila de Bootstrap -->
+    <header class="row align-items-center mb-5">
+      <!-- Info personal -->
+      <div class="col-md-8">
+        <h1 class="titulo text-primary mb-3">Iván Gonzalo Cabrera</h1>
+        <p class="text-muted mb-1"><i class="fas fa-map-marker-alt me-2"></i>Corrientes, Argentina</p>
+        <p class="text-muted mb-1"><i class="fas fa-phone me-2"></i>+54 3718-506984</p>
+        <p class="text-muted"><i class="fas fa-envelope me-2"></i>ivangonzalo1253@gmail.com</p>
+        <div class="mt-3">
+          <a class="btn btn-outline-primary me-2" href="https://github.com/Ivancho1253" target="_blank">
+            <i class="fab fa-github"></i> GitHub
           </a>
-          <a href="https://mail.google.com/mail/u/1/#inbox/FMfcgzQZVKCJHWrXGLQjkqmFcMTcWqCQ?compose=DmwnWrRqhsSlBLrsmNmSJxrtFGjxzKxFfvTwsCzqrjXDSMBtNqnTzwckjTRzqRqQlrzdPZXFDhmL" target="_blank">
-            <i class="fa-solid fa-envelope"></i>
+          <a class="btn btn-outline-info" href="https://www.linkedin.com/in/ivan-cabrera-128a60281/" target="_blank">
+            <i class="fab fa-linkedin"></i> LinkedIn
           </a>
         </div>
-
       </div>
-      <div class="photo">
-        <img src="https://lh3.googleusercontent.com/a/ACg8ocL86WqHhwqr-d6YKm8mQeSelXZtptGEPO4CA9amjs-HKzrYWxCmsg=s576-c-no" alt="Iván Cabrera" />
+      <!-- Foto -->
+      <div class="col-md-4 text-center">
+        <img 
+          src="https://lh3.googleusercontent.com/a/ACg8ocL86WqHhwqr-d6YKm8mQeSelXZtptGEPO4CA9amjs-HKzrYWxCmsg=s576-c-no"
+          alt="Iván Cabrera"
+          class="img-fluid rounded-circle shadow-sm"
+          style="max-width:180px;"
+        >
       </div>
-
     </header>
 
-    <section>
-      <h2>Perfil Profesional</h2>
+    <!-- Secciones -->
+    <section class="mb-4">
+      <h2 class="h5 border-start border-4 border-primary ps-3 text-primary">Perfil Profesional</h2>
       <p>Soy estudiante de Ingeniería en Sistemas de Información, apasionado por la tecnología, el desarrollo de software, la resolución de problemas complejos, la seguridad informática y el analisis de vulnerabilidades de sistemas informáticos. Me considero proactivo, curioso y con muchas ganas de seguir aprendiendo e innovando.</p>
+      <br>
     </section>
 
-    <section>
-      <h2>Educación</h2>
-      <ul>
-        <li><strong>Educación Nivel Primario</strong> – Instituto Santa Catalina Laboure – 2011 – 2016</li>
-        <li><strong>Educación Nivel Secundario</strong> – Insituto Santa Catalina Laboure – 2017 – 2022</li>
-        <li><strong>Educación Nivel Universitario</strong> – Universidad Cuenca del Plata / Facultad de Tecnología, Ingeniería y Arquitectura – 2023 – Actualidad</li>
+    <section class="mb-4">
+      <h2 class="h5 border-start border-4 border-primary ps-3 text-primary">Educación</h2>
+      <ul class="list-unstyled">
+        <li><strong>Primario</strong> – Instituto Santa Catalina Laboure (2011–2016)</li>
+        <li><strong>Secundario</strong> – Instituto Santa Catalina Laboure (2017–2022)</li>
+        <li><strong>Universitario</strong> – Universidad Cuenca del Plata (2023–Actualidad)</li>
       </ul>
+      <br>
     </section>
 
-    <section>
-      <h2>Experiencia Profesional</h2>
-      <ul>
-        <li><strong>[Nombre de la empresa]</strong> – [Puesto] – [Fechas] <br/> [Descripción breve de tareas]</li>
-        <li>Pelado por ahora</li>
+    <section class="mb-4">
+      <h2 class="h5 border-start border-4 border-primary ps-3 text-primary">Experiencia</h2>
+      <ul class="list-unstyled">
+        <li><strong>Tester de Software API</strong> – Tester con Postman a APIs</li>
+        <li><strong>Tester de Software Web</strong> – Tester con Playwright a Aplicaciones Web</li>
+        <li><strong>Desarrollador de Software</strong> – Desarrollo de Paginas/Interfaces Web</li>
+        <li><strong>Seguridad Informática</strong> – Detector de vulnerabilidades en sistemas informáticos</li>
       </ul>
+      <br>
     </section>
 
-    <section>
-      <h2>Conocimientos Técnicos</h2>
-      <ul>
-        <li><strong>Lenguajes</strong>: Java, TypeScript, JavaScript, Python, C, Css, C++</li>
-        <li><strong>Frameworks</strong>: React, Node.js, Express Js, Deno</li>
-        <li><strong>Herramientas</strong>: Git, VS Code, Figma, Playwright</li>
-        <li><strong>Sistemas Operativos</strong>: Windows, Linux (Kali Linux)</li>
+    <section class="mb-4">
+      <h2 class="h5 border-start border-4 border-primary ps-3 text-primary">Conocimientos Técnicos</h2>
+      <ul class="list-unstyled">
+        <li><strong>Lenguajes:</strong> Java, TS, JS, Python, C, C++</li>
+        <li><strong>Frameworks:</strong> React, Node.js, Express.js, Deno, Vue.js, Bootstrap</li>
+        <li><strong>Herramientas Tecnologicas:</strong> Git, VS Code, Figma, Playwright, Jest, Postman</li>
+        <li><strong>Sistemas Operativos:</strong> Windows, Linux (Kali Linux)</li>
       </ul>
+      <br>
     </section>
 
-    <section>
-      <h2>Idiomas</h2>
-      <ul>
-        <li><strong>Español</strong>: Nativo</li>
-        <li><strong>Ingles</strong>: Intermedio/Avanzado</li>
+    <section class="mb-4">
+      <h2 class="h5 border-start border-4 border-primary ps-3 text-primary">Idiomas</h2>
+      <ul class="list-unstyled">
+        <li>Español: Nativo</li>
+        <li>Inglés: Intermedio/Avanzado</li>
       </ul>
+      <br>
     </section>
 
-    <section id="proyectos">
-      <h2>Proyectos Destacados</h2>
-      <ul>
-        <p>Ingresa al Github para acceder a todos mis proyectos</p>
-        <a href="https://github.com/Ivancho1253" target="_blank">
-          <i class="fab fa-github"></i>
-        </a>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Habilidades Blandas</h2>
-      <ul>
-        <li>Trabajo en equipo, liderazgo en trabajos de equipo, resolucion de problemas complejos, pensamiento crítico, comunicación efectiva, aprendizaje autónomo</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Intereses</h2>
-      <ul>
-        <li>Desarrollo de software, analisis de vulnerabilidades, seguridad informática</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Cursos realizados</h2>
-      <ul>
-        <li>Desarrollo de software, seguridad informática, </li>
-        <p>Pulsa el boton para acceder a mis cursos</p>
-
-        <button><a href="certificados.html" target="_blank">Cursos</a></button>
-      </ul>
+    <section class="mb-4 text-primary">
+      <a class="btn btn-primary btn-lg" href="certificados.html" target="_blank">
+        <i class="fas fa-certificate me-2"></i>Ver Cursos y Certificados
+      </a>
     </section>
 
   </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-
-
