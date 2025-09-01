@@ -5,23 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Currículum de Iván Cabrera</title>
 
-  <!-- Bootstrap CSS local -->
-  <link 
-    rel="stylesheet" 
-    href="node_modules/bootstrap/dist/css/bootstrap.min.css"
-  />
-  <!-- Tus estilos personalizados -->
+  <!-- Bootstrap CSS desde CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Tus estilos personalizados (si lo usás) -->
   <link rel="stylesheet" href="style.css" />
 
+  <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/4241db501e.js" crossorigin="anonymous"></script>
 </head>
 <body class="bg-dark">
 
   <div class="container my-5 p-4 bg-white rounded shadow-lg">
-    
-    <!-- Header como fila de Bootstrap -->
+
     <header class="row align-items-center mb-5">
-      <!-- Info personal -->
       <div class="col-md-8">
         <h1 class="titulo text-primary mb-3">Iván Gonzalo Cabrera</h1>
         <p class="text-muted mb-1"><i class="fas fa-map-marker-alt me-2"></i>Corrientes, Argentina</p>
@@ -36,7 +33,6 @@
           </a>
         </div>
       </div>
-      <!-- Foto -->
       <div class="col-md-4 text-center">
         <img 
           src="https://lh3.googleusercontent.com/a/ACg8ocL86WqHhwqr-d6YKm8mQeSelXZtptGEPO4CA9amjs-HKzrYWxCmsg=s576-c-no"
@@ -47,7 +43,6 @@
       </div>
     </header>
 
-    <!-- Secciones -->
     <section class="mb-4">
       <h2 class="h5 border-start border-4 border-primary ps-3 text-primary">Perfil Profesional</h2>
       <p>Soy estudiante de Ingeniería en Sistemas de Información, apasionado por la tecnología, el desarrollo de software, la resolución de problemas complejos, la seguridad informática y el analisis de vulnerabilidades de sistemas informáticos. Me considero proactivo, curioso y con muchas ganas de seguir aprendiendo e innovando.</p>
@@ -103,7 +98,7 @@
 
   </div>
 
-  <!-- Bootstrap JS Bundle -->
-  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap JS (bundle con Popper) desde CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 </body>
 </html>
