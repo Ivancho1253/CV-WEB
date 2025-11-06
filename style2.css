@@ -128,3 +128,43 @@ body {
     font-size: 1.8em;  /* ajusta un poco hacia abajo */
   }
 }
+
+/* Botón flotante para volver */
+.btn-volver {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95em;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-volver:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.btn-volver i {
+  font-size: 1.1em;
+}
+
+/* Responsivo para mobile */
+@media (max-width: 600px) {
+  .btn-volver {
+    top: 10px;
+    left: 10px;
+    padding: 10px 18px;
+    font-size: 0.85em;
+  }
+}
