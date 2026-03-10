@@ -18,6 +18,61 @@
 
   <!-- Tus estilos personalizados (si lo usás) -->
   <link rel="stylesheet" href="style.css" />
+  
+  <!-- Estilos para PDF -->
+  <style>
+    @media print {
+      .experience-card,
+      .project-card,
+      .education-card,
+      .certificate-item,
+      .skill-category,
+      section,
+      .row {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+      }
+      
+      section {
+        page-break-after: auto !important;
+        margin-bottom: 30px !important;
+      }
+      
+      h2.section-title {
+        page-break-after: avoid !important;
+        break-after: avoid !important;
+      }
+    }
+    
+    .generating-pdf .experience-card,
+    .generating-pdf .project-card,
+    .generating-pdf .education-card,
+    .generating-pdf .certificate-item,
+    .generating-pdf .skill-category,
+    .generating-pdf .language-card {
+      page-break-inside: avoid !important;
+      break-inside: avoid !important;
+      display: block !important;
+      margin-bottom: 20px !important;
+    }
+    
+    .generating-pdf section {
+      page-break-inside: auto !important;
+      page-break-after: auto !important;
+      margin-bottom: 35px !important;
+    }
+    
+    .generating-pdf h2.section-title {
+      page-break-after: avoid !important;
+      break-after: avoid !important;
+      margin-bottom: 20px !important;
+    }
+    
+    .generating-pdf .row {
+      page-break-inside: avoid !important;
+      break-inside: avoid !important;
+    }
+  </style>
 
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/4241db501e.js" crossorigin="anonymous"></script>
@@ -575,8 +630,27 @@
             compress: true
           },
           pagebreak: { 
-            mode: ['avoid-all', 'css'],
-            avoid: ['.experience-card', '.project-card', '.education-card', '.certificate-item', '.skill-category', 'section']
+            mode: ['avoid-all', 'css', 'legacy'],
+            before: ['.page-break-before'],
+            after: ['.page-break-after'],
+            avoid: [
+              '.experience-card', 
+              '.project-card', 
+              '.education-card', 
+              '.certificate-item', 
+              '.skill-category',
+              '.language-card',
+              '.skill-badge',
+              '.skill-badge-alt',
+              '.methodology-badge',
+              'h2',
+              'h3',
+              '.row',
+              '.col-md-6',
+              '.col-md-3',
+              'ul',
+              'li'
+            ]
           }
         };
 
