@@ -3,86 +3,248 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cursos de Ivan Cabrera</title>
-  <link rel="stylesheet" href="style2.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet" />
+  <title>Trabajos y Certificados - Ivan Cabrera</title>
+  
+  <!-- Favicon -->
   <link rel="icon" href="images/iconocv.png" type="image/png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="style.css" />
+  
+  <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/4241db501e.js" crossorigin="anonymous"></script>
 </head>
-<body>
-  <a href="index.html" class="btn-volver">
-    <i class="fas fa-arrow-left"></i> Volver al CV
-  </a>
 
-  <div class="container">
-    <header>
-      <div class="info">
-        <h1 class="titulo">Trabajos y Certificados de Ivan Cabrera</h1>
+<body class="bg-gradient">
+
+  <!-- Botón volver -->
+  <div class="container my-4">
+    <a href="index.html" class="btn btn-light shadow-sm back-button">
+      <i class="fas fa-arrow-left me-2"></i>Volver al CV
+    </a>
+  </div>
+
+  <div class="container my-5 p-0 bg-white rounded-4 shadow-premium">
+
+    <!-- HEADER -->
+    <div class="header-gradient p-5 rounded-top-4 text-white text-center position-relative overflow-hidden">
+      <div class="header-pattern"></div>
+      <div class="position-relative">
+        <h1 class="display-4 fw-bold mb-3 text-white name-title">
+          <i class="fas fa-briefcase me-3"></i>Trabajos y Certificados
+        </h1>
+        <p class="lead text-white-90 mb-0">Iván Gonzalo Cabrera</p>
       </div>
-    </header>
-
-    <div class="trabajos">
-      <h3 class="tituloCertificados">Trabajos</h3>
     </div>
 
-      <section>
-        <h2><a href="https://consultorioayd.netlify.app/" target="_blank">Consultorio Odontológico AyD</a></h2>
-        <br>
-        <a href="https://consultorioayd.netlify.app/" target="_blank">
-          <img
-            src="images/consultorioayd.png"
-            alt="Consultorio Odontológico AyD"
-            class="imagen-certificado"
-          >
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="p-5">
+
+      <!-- SECCIÓN TRABAJOS -->
+      <section class="mb-5">
+        <h2 class="section-title mb-4">
+          <i class="fas fa-laptop-code me-2 title-icon"></i>Proyectos Desarrollados
+        </h2>
+
+        <div class="row g-4">
+          <!-- Consultorio Odontológico AyD -->
+          <div class="col-lg-6">
+            <div class="portfolio-card">
+              <div class="portfolio-header">
+                <h3 class="h5 fw-bold mb-2">Consultorio Odontológico AyD</h3>
+                <a href="https://consultorioayd.netlify.app/" target="_blank" class="portfolio-link">
+                  <i class="fas fa-external-link-alt me-1"></i>Visitar proyecto
+                </a>
+              </div>
+              <div class="portfolio-image-container">
+                <a href="https://consultorioayd.netlify.app/" target="_blank">
+                  <img
+                    src="images/consultorioayd.png"
+                    alt="Consultorio Odontológico AyD"
+                    class="portfolio-image"
+                  >
+                </a>
+              </div>
+              <div class="portfolio-footer">
+                <p class="text-secondary small mb-2">Sistema web de gestión de turnos para consultorio odontológico</p>
+                <div class="tech-tags">
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">React</span>
+                  <span class="tech-tag">Node.js</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- M.I.G Network -->
+          <div class="col-lg-6">
+            <div class="portfolio-card">
+              <div class="portfolio-header">
+                <h3 class="h5 fw-bold mb-2">M.I.G Network Soluciones Digitales</h3>
+                <a href="https://mignetwork.netlify.app/" target="_blank" class="portfolio-link">
+                  <i class="fas fa-external-link-alt me-1"></i>Visitar proyecto
+                </a>
+              </div>
+              <div class="portfolio-image-container">
+                <a href="https://mignetwork.netlify.app/" target="_blank">
+                  <img
+                    src="images/mignetwork.png"
+                    alt="MIG Network"
+                    class="portfolio-image"
+                  >
+                </a>
+              </div>
+              <div class="portfolio-footer">
+                <p class="text-secondary small mb-2">Plataforma de desarrollo de soluciones tecnológicas empresariales</p>
+                <div class="tech-tags">
+                  <span class="tech-tag">Web Development</span>
+                  <span class="tech-tag">UI/UX</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN CERTIFICADOS -->
+      <section class="mb-4">
+        <h2 class="section-title mb-4">
+          <i class="fas fa-certificate me-2 title-icon"></i>Certificaciones
+        </h2>
+
+        <div class="row g-4">
+          <!-- Certificado ABC Emprendedurismo -->
+          <div class="col-lg-4 col-md-6">
+            <div class="certificate-card">
+              <div class="certificate-badge">
+                <i class="fas fa-award"></i>
+              </div>
+              <h3 class="h6 fw-bold mb-2 mt-3">ABC del Emprendedurismo</h3>
+              <p class="text-secondary small mb-3">Universidad de la Cuenca del Plata • 2023</p>
+              <div class="certificate-image-container" data-bs-toggle="modal" data-bs-target="#modal1">
+                <img
+                  src="images/abcemprendurismo.png"
+                  alt="Certificado ABC Emprendurismo"
+                  class="certificate-image"
+                >
+                <div class="certificate-overlay">
+                  <i class="fas fa-search-plus"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certificado Innovación Tecnológica -->
+          <div class="col-lg-4 col-md-6">
+            <div class="certificate-card">
+              <div class="certificate-badge">
+                <i class="fas fa-award"></i>
+              </div>
+              <h3 class="h6 fw-bold mb-2 mt-3">XXIII Congreso Internacional en Innovación Tecnológica</h3>
+              <p class="text-secondary small mb-3">Universidad Abierta Interamericana • 2025</p>
+              <div class="certificate-image-container" data-bs-toggle="modal" data-bs-target="#modal2">
+                <img
+                  src="images/certificado_tecnoinfo.png"
+                  alt="Certificado Tecnoinfo"
+                  class="certificate-image"
+                >
+                <div class="certificate-overlay">
+                  <i class="fas fa-search-plus"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certificado Inteligencia Artificial -->
+          <div class="col-lg-4 col-md-6">
+            <div class="certificate-card">
+              <div class="certificate-badge">
+                <i class="fas fa-award"></i>
+              </div>
+              <h3 class="h6 fw-bold mb-2 mt-3">Inteligencia Artificial y Educación</h3>
+              <p class="text-secondary small mb-3">Universidad de la Cuenca del Plata • 2025</p>
+              <div class="certificate-image-container" data-bs-toggle="modal" data-bs-target="#modal3">
+                <img
+                  src="images/certificado_ia.png"
+                  alt="Certificado Inteligencia Artificial"
+                  class="certificate-image"
+                >
+                <div class="certificate-overlay">
+                  <i class="fas fa-search-plus"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Botón volver al final -->
+      <div class="text-center mt-5 pt-4">
+        <a href="index.html" class="btn btn-primary btn-lg px-5 shadow-sm">
+          <i class="fas fa-arrow-left me-2"></i>Volver al CV Principal
         </a>
-      </section>
+      </div>
 
-            <section>
-        <h2><a href="https://mignetwork.netlify.app/" target="_blank">M.I.G Network Soluciones Digitales</a></h2>
-        <br>
-        <a href="https://mignetwork.netlify.app/" target="_blank">
-          <img
-            src="images/mignetwork.png"
-            alt="MIG Network"
-            class="imagen-certificado"
-          >
-        </a>
-      </section>
-
-    <div class="certificados">
-      <h3 class="tituloCertificados">Certificados</h3>
-
-      <section>
-        <h2>Curso ABC Emprendurismo</h2>
-        <br>
-        <img
-          src="images/abcemprendurismo.png"
-          alt="Certificado ABC Emprendurismo"
-          class="imagen-certificado"
-        >
-      </section>
-
-      <section>
-        <h2>Certificado Innovacion Tecnologica</h2>
-        <br>
-        <img
-          src="images/certificado_tecnoinfo.png"
-          alt="Certificado Tecnoinfo"
-          class="imagen-certificado"
-        >
-      </section>
-
-      <section>
-        <h2>Certificado Inteligencia Artificial</h2>
-        <br>
-        <img
-          src="images/certificado_ia.png"
-          alt="Certificado Inteligencia Artificial"
-          class="imagen-certificado"
-        >
-      </section>
     </div>
   </div>
+
+  <!-- MODALES PARA AMPLIAR CERTIFICADOS -->
+  
+  <!-- Modal 1: ABC Emprendedurismo -->
+  <div class="modal fade" id="modal1" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header border-0">
+          <h5 class="modal-title fw-bold">ABC del Emprendedurismo</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-0">
+          <img src="images/abcemprendurismo.png" alt="Certificado" class="w-100">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Innovación Tecnológica -->
+  <div class="modal fade" id="modal2" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header border-0">
+          <h5 class="modal-title fw-bold">XXIII Congreso Internacional en Innovación Tecnológica</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-0">
+          <img src="images/certificado_tecnoinfo.png" alt="Certificado" class="w-100">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Inteligencia Artificial -->
+  <div class="modal fade" id="modal3" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header border-0">
+          <h5 class="modal-title fw-bold">Inteligencia Artificial y Educación</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-0">
+          <img src="images/certificado_ia.png" alt="Certificado" class="w-100">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
-

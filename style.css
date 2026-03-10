@@ -1,21 +1,1222 @@
-/* Fondo animado */
-body {
-  background: url('https://i.gifer.com/1kc1.gif') no-repeat center center fixed;
-  background-size: cover;
+/* ========================================
+   VARIABLES Y CONFIGURACIÓN GLOBAL
+   ======================================== */
+:root {
+  --primary-color: #2563eb;
+  --primary-dark: #1e40af;
+  --primary-light: #60a5fa;
+  --secondary-color: #0891b2;
+  --success-color: #10b981;
+  --dark-color: #1e293b;
+  --text-color: #334155;
+  --text-light: #64748b;
+  --bg-light: #f8fafc;
+  --border-color: #e2e8f0;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
 }
 
-/* Título principal */
-.titulo {
-  font-weight: 700;
-}
-
-/* Ajuste de lista sin bullets (si no usas list-unstyled de Bootstrap) */
-ul.list-unstyled {
-  padding-left: 0;
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Para el caso de que quieras un poco de translucidez en el contenedor */
-.container {
-  background: rgba(255,255,255,0.95);
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-attachment: fixed;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* ========================================
+   CONTENEDOR PRINCIPAL
+   ======================================== */
+#cv-content {
+  max-width: 1200px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.shadow-premium {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.rounded-4 {
+  border-radius: 1.5rem !important;
+}
+
+.rounded-top-4 {
+  border-top-left-radius: 1.5rem !important;
+  border-top-right-radius: 1.5rem !important;
+}
+
+/* ========================================
+   HEADER CON GRADIENTE
+   ======================================== */
+.header-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+  z-index: 1;
+}
+
+.header-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,.03) 10px, rgba(255,255,255,.03) 20px);
+  z-index: -1;
+}
+
+.name-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.subtitle-role {
+  opacity: 0.95;
+  font-weight: 400;
+}
+
+.text-white-90 {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.contact-info {
+  font-size: 0.95rem;
+}
+
+.contact-item {
+  color: rgba(255, 255, 255, 0.95);
+  white-space: nowrap;
+}
+
+.contact-item i {
+  opacity: 0.8;
+}
+
+/* Botones del header */
+.header-gradient .btn {
+  border: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.header-gradient .btn-light {
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--primary-dark);
+}
+
+.header-gradient .btn-light:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.header-gradient .btn-danger {
+  background: #ef4444;
+  color: white;
+}
+
+.header-gradient .btn-danger:hover {
+  background: #dc2626;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+/* Imagen de perfil */
+.profile-image-container {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 6px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  object-fit: cover;
+}
+
+/* ========================================
+   TÍTULOS DE SECCIONES
+   ======================================== */
+.section-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--dark-color);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 3px solid var(--primary-color);
+  display: flex;
+  align-items: center;
+}
+
+.title-icon {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+}
+
+/* ========================================
+   TARJETAS DE EXPERIENCIA
+   ======================================== */
+.experience-card {
+  background: var(--bg-light);
+  padding: 1.75rem;
+  border-radius: 1rem;
+  border-left: 4px solid var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateX(5px);
+  box-shadow: var(--shadow-md);
+}
+
+.icon-box {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.custom-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.custom-list li {
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 0.75rem;
+  color: var(--text-color);
+  line-height: 1.7;
+}
+
+.custom-list li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* ========================================
+   TARJETAS DE PROYECTOS
+   ======================================== */
+.project-card {
+  background: white;
+  border: 2px solid var(--border-color);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.project-card:hover {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-5px);
+}
+
+.project-header {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.75rem;
+}
+
+.project-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.project-link:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.tech-tag {
+  background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+  color: white;
+  padding: 0.35rem 0.85rem;
+  border-radius: 2rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ========================================
+   EDUCACIÓN
+   ======================================== */
+.education-card {
+  background: linear-gradient(to right, var(--bg-light), white);
+  border-left: 4px solid var(--success-color);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.education-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--success-color), #34d399);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+/* ========================================
+   SKILLS Y BADGES
+   ======================================== */
+.skill-badge {
+  background: white;
+  border: 2px solid var(--success-color);
+  color: var(--success-color);
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.skill-badge:hover {
+  background: var(--success-color);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.skill-badge i {
+  font-size: 0.9rem;
+}
+
+.skill-badge-alt {
+  background: white;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.skill-badge-alt:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ========================================
+   CATEGORÍAS DE HABILIDADES
+   ======================================== */
+.skill-category {
+  background: var(--bg-light);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  height: 100%;
+  border-top: 3px solid var(--primary-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.skill-category-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--dark-color);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.skill-category-title i {
+  color: var(--primary-color);
+  font-size: 1.1rem;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-tag {
+  background: white;
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+}
+
+.skill-tag:hover {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ========================================
+   METODOLOGÍAS
+   ======================================== */
+.methodology-badge {
+  background: linear-gradient(135deg, var(--secondary-color), #06b6d4);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+}
+
+.methodology-badge:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.methodology-badge i {
+  opacity: 0.9;
+}
+
+/* ========================================
+   CERTIFICACIONES
+   ======================================== */
+.certificate-item {
+  padding: 1.25rem;
+  background: var(--bg-light);
+  border-radius: 0.75rem;
+  border-left: 3px solid #f59e0b;
+  transition: all 0.3s ease;
+}
+
+.certificate-item:hover {
+  background: white;
+  box-shadow: var(--shadow-md);
+  transform: translateX(5px);
+}
+
+.certificate-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #f59e0b, #fbbf24);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* ========================================
+   IDIOMAS
+   ======================================== */
+.language-card {
+  background: white;
+  border: 2px solid var(--border-color);
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.language-card:hover {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-md);
+}
+
+.language-level {
+  display: flex;
+  gap: 0.25rem;
+  color: var(--primary-color);
+  font-size: 0.75rem;
+}
+
+.language-level i {
+  font-size: 0.6rem;
+}
+
+/* ========================================
+   UTILIDADES
+   ======================================== */
+.text-justify {
+  text-align: justify;
+}
+
+.hide-in-pdf {
+  /* Se oculta dinámicamente con JavaScript */
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+  .name-title {
+    font-size: 1.75rem;
+  }
+  
+  .subtitle-role {
+    font-size: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.4rem;
+  }
+  
+  .profile-image-container {
+    width: 140px;
+    height: 140px;
+  }
+
+  .contact-item {
+    font-size: 0.85rem;
+  }
+}
+
+/* ========================================
+   ESTILOS PARA IMPRESIÓN / PDF - PERFECTO
+   ======================================== */
+
+/* Clase cuando se genera el PDF - FORZAR ANCHO COMPLETO */
+.generating-pdf {
+  background: white !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  max-width: none !important;
+  width: 100% !important;
+  min-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-size: 14px !important;
+  display: block !important;
+}
+
+/* Container Bootstrap - FORZAR 100% en PDF */
+#cv-content.generating-pdf,
+.generating-pdf.container {
+  max-width: none !important;
+  width: 100% !important;
+  min-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Forzar que todos los contenedores y rows ocupen el ancho completo */
+.generating-pdf * {
+  box-sizing: border-box !important;
+}
+
+.generating-pdf > *,
+.generating-pdf .container,
+.generating-pdf .container-fluid,
+.generating-pdf .row {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.generating-pdf * {
+  box-shadow: none !important;
+}
+
+.generating-pdf .rounded-4,
+.generating-pdf .rounded-top-4 {
+  border-radius: 0 !important;
+}
+
+.generating-pdf .shadow-premium {
+  box-shadow: none !important;
+}
+
+/* Header simplificado y limpio para PDF */
+.generating-pdf .header-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+  border-radius: 0 !important;
+  padding: 2rem 3rem !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+}
+
+.generating-pdf .header-pattern {
+  display: none !important;
+}
+
+/* Contenido principal */
+.generating-pdf > div:not(.header-gradient) {
+  padding: 2rem 3rem !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+}
+
+/* Espaciado uniforme y limpio */
+.generating-pdf .mb-5 {
+  margin-bottom: 1.25rem !important;
+}
+
+.generating-pdf .mb-4 {
+  margin-bottom: 1rem !important;
+}
+
+.generating-pdf .mb-3 {
+  margin-bottom: 0.85rem !important;
+}
+
+.generating-pdf .mb-2 {
+  margin-bottom: 0.65rem !important;
+}
+
+/* Títulos profesionales */
+.generating-pdf .name-title {
+  font-size: 1.85rem !important;
+  margin-bottom: 0.5rem !important;
+  line-height: 1.2 !important;
+}
+
+.generating-pdf .subtitle-role {
+  font-size: 1rem !important;
+  margin-bottom: 0.85rem !important;
+  line-height: 1.3 !important;
+}
+
+.generating-pdf .contact-info {
+  font-size: 0.85rem !important;
+  margin-bottom: 0.65rem !important;
+}
+
+.generating-pdf .section-title {
+  font-size: 1.35rem !important;
+  margin-bottom: 0.85rem !important;
+  padding-bottom: 0.4rem !important;
+  border-bottom-width: 2.5px !important;
+  line-height: 1.2 !important;
+}
+
+.generating-pdf .title-icon {
+  font-size: 1.25rem !important;
+}
+
+/* Imagen de perfil optimizada */
+.generating-pdf .profile-image-container {
+  width: 120px !important;
+  height: 120px !important;
+}
+
+.generating-pdf .profile-image {
+  border-width: 4px !important;
+}
+
+/* Cards simplificadas pero elegantes */
+.generating-pdf .experience-card,
+.generating-pdf .project-card,
+.generating-pdf .education-card {
+  padding: 1rem !important;
+  margin-bottom: 0.85rem !important;
+  border-width: 1.5px !important;
+  border-radius: 0.5rem !important;
+  background: #f8fafc !important;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+.generating-pdf .certificate-item {
+  padding: 0.85rem !important;
+  margin-bottom: 0.75rem !important;
+  border-radius: 0.5rem !important;
+  background: #f8fafc !important;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+/* Iconos con buen tamaño */
+.generating-pdf .icon-box,
+.generating-pdf .education-icon,
+.generating-pdf .certificate-icon {
+  width: 40px !important;
+  height: 40px !important;
+  font-size: 1.1rem !important;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+/* Skills y badges legibles */
+.generating-pdf .skill-badge,
+.generating-pdf .skill-badge-alt {
+  padding: 0.5rem 0.85rem !important;
+  font-size: 0.8rem !important;
+  margin-bottom: 0.4rem !important;
+  border-width: 1.5px !important;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+.generating-pdf .skill-tag {
+  padding: 0.4rem 0.75rem !important;
+  font-size: 0.8rem !important;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+.generating-pdf .tech-tag {
+  padding: 0.35rem 0.75rem !important;
+  font-size: 0.72rem !important;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+.generating-pdf .methodology-badge {
+  padding: 0.65rem 1.25rem !important;
+  font-size: 0.88rem !important;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+/* Categorías de skills */
+.generating-pdf .skill-category {
+  padding: 1rem !important;
+  margin-bottom: 0.75rem !important;
+  border-radius: 0.5rem !important;
+  background: #f8fafc !important;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+.generating-pdf .skill-category-title {
+  font-size: 0.95rem !important;
+  margin-bottom: 0.65rem !important;
+}
+
+/* Texto limpio y legible */
+.generating-pdf p {
+  margin-bottom: 0.65rem !important;
+  line-height: 1.5 !important;
+  font-size: 0.88rem !important;
+}
+
+.generating-pdf .custom-list li {
+  margin-bottom: 0.4rem !important;
+  font-size: 0.85rem !important;
+  line-height: 1.5 !important;
+}
+
+/* Language cards */
+.generating-pdf .language-card {
+  padding: 0.85rem !important;
+  border-width: 1.5px !important;
+  background: white !important;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+/* Clase especial para elementos que no deben cortarse */
+.generating-pdf .no-break {
+  page-break-inside: avoid !important;
+  break-inside: avoid !important;
+}
+
+/* Aplicar no-break a elementos clave */
+.generating-pdf section,
+.generating-pdf .experience-card,
+.generating-pdf .project-card,
+.generating-pdf .education-card,
+.generating-pdf .certificate-item,
+.generating-pdf .skill-category,
+.generating-pdf .language-card {
+  page-break-inside: avoid !important;
+  break-inside: avoid !important;
+}
+
+.generating-pdf .section-title {
+  page-break-after: avoid !important;
+  break-after: avoid !important;
+}
+
+/* Mantener colores en PDF */
+.generating-pdf * {
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+  color-adjust: exact !important;
+}
+
+/* Optimizar rows y grids */
+.generating-pdf .row {
+  margin-bottom: 0.75rem !important;
+}
+
+.generating-pdf .g-4 > * {
+  padding: 0.5rem !important;
+}
+
+.generating-pdf .g-3 > * {
+  padding: 0.4rem !important;
+}
+
+body.pdf-generating {
+  background: white !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body.pdf-generating .container {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body.pdf-generating #cv-content {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+body.pdf-generating .rounded-4,
+body.pdf-generating .rounded-top-4 {
+  border-radius: 0 !important;
+}
+
+body.pdf-generating .shadow-premium {
+  box-shadow: none !important;
+}
+
+/* Ajustar header para PDF */
+body.pdf-generating .header-gradient {
+  border-radius: 0 !important;
+  padding: 2rem 2.5rem !important;
+}
+
+/* Ajustar contenido principal */
+body.pdf-generating .p-5 {
+  padding: 1.5rem 2.5rem !important;
+}
+
+/* Reducir espacios entre secciones */
+body.pdf-generating .mb-5 {
+  margin-bottom: 1.5rem !important;
+}
+
+body.pdf-generating .mb-4 {
+  margin-bottom: 1rem !important;
+}
+
+body.pdf-generating section {
+  page-break-inside: avoid !important;
+  break-inside: avoid !important;
+}
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  html, body {
+    width: 210mm;
+    height: 297mm;
+    margin: 0;
+    padding: 0;
+    background: white !important;
+  }
+
+  body {
+    background: white !important;
+    margin: 0;
+    padding: 0;
+  }
+
+  .bg-gradient {
+    background: white !important;
+  }
+
+  #cv-content {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    max-width: 100% !important;
+    width: 210mm !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+
+  .container {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .header-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    border-radius: 0 !important;
+    page-break-after: avoid !important;
+  }
+
+  .rounded-top-4,
+  .rounded-4 {
+    border-radius: 0 !important;
+  }
+
+  .shadow-premium {
+    box-shadow: none !important;
+  }
+
+  /* EVITAR CORTES ENTRE PÁGINAS - CRÍTICO */
+  section {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    orphans: 3 !important;
+    widows: 3 !important;
+  }
+
+  .experience-card,
+  .project-card,
+  .education-card,
+  .certificate-item,
+  .skill-category,
+  .skill-badge,
+  .language-card {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .row {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .section-title {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+
+  /* Mantener todos los colores y estilos */
+  .tech-tag,
+  .methodology-badge,
+  .skill-badge,
+  .skill-badge-alt,
+  .skill-tag {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  .icon-box,
+  .education-icon,
+  .certificate-icon {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  /* Backgrounds */
+  .experience-card,
+  .skill-category,
+  .education-card,
+  .certificate-item,
+  .project-card {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  /* Deshabilitar hover effects en PDF */
+  .project-card:hover,
+  .experience-card:hover,
+  .skill-badge:hover,
+  .skill-badge-alt:hover,
+  .skill-tag:hover,
+  .certificate-item:hover,
+  .language-card:hover,
+  .methodology-badge:hover {
+    transform: none !important;
+    box-shadow: inherit !important;
+  }
+
+  /* Asegurar que las imágenes se impriman correctamente */
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .profile-image {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Ocultar scrollbars */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Optimizar espaciado para PDF */
+  .p-5 {
+    padding: 2rem !important;
+  }
+
+  .mb-5 {
+    margin-bottom: 1.5rem !important;
+  }
+
+  .header-gradient {
+    padding: 1.5rem !important;
+  }
+}
+
+/* ========================================
+   ESTILOS PARA CERTIFICADOS.HTML
+   ======================================== */
+
+/* Botón volver */
+.back-button {
+  background: white;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Tarjetas de Portfolio */
+.portfolio-card {
+  background: white;
+  border: 2px solid var(--border-color);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-card:hover {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-8px);
+}
+
+.portfolio-header {
+  padding: 1.5rem 1.5rem 1rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.portfolio-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: color 0.2s;
+  display: inline-block;
+}
+
+.portfolio-link:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.portfolio-image-container {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-light);
+  aspect-ratio: 16/9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.portfolio-card:hover .portfolio-image {
+  transform: scale(1.05);
+}
+
+.portfolio-footer {
+  padding: 1.25rem 1.5rem;
+  background: white;
+  flex-grow: 1;
+}
+
+/* Tarjetas de Certificados */
+.certificate-card {
+  background: white;
+  border: 2px solid var(--border-color);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.certificate-card:hover {
+  border-color: #f59e0b;
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-5px);
+}
+
+.certificate-badge {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #f59e0b, #fbbf24);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.75rem;
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+}
+
+.certificate-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  margin-top: auto;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+}
+
+.certificate-image-container:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.certificate-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.certificate-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(102, 126, 234, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.certificate-image-container:hover .certificate-overlay {
+  opacity: 1;
+}
+
+.certificate-overlay i {
+  color: white;
+  font-size: 2rem;
+}
+
+.certificate-image-container:hover .certificate-image {
+  transform: scale(1.1);
+}
+
+/* Modales */
+.modal-content {
+  border: none;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.modal-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.modal-header .btn-close {
+  filter: invert(1);
+}
+
+.modal-title {
+  color: white;
+}
+
+/* Responsive para certificados */
+@media (max-width: 768px) {
+  .portfolio-card,
+  .certificate-card {
+    margin-bottom: 1.5rem;
+  }
 }

@@ -8,6 +8,11 @@
   <!-- Favicon -->
   <link rel="icon" href="images/iconocv.png" type="image/png" />
 
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
   <!-- Bootstrap CSS desde CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -16,90 +21,594 @@
 
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/4241db501e.js" crossorigin="anonymous"></script>
+  
+  <!-- html2pdf.js para exportar a PDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 
-<body class="bg-dark">
+<body class="bg-gradient">
 
-  <div class="container my-5 p-4 bg-white rounded shadow-lg">
+  <div class="container my-5 p-0 bg-white rounded-4 shadow-premium" id="cv-content">
 
-    <header class="row align-items-center mb-5">
-      <div class="col-md-8">
-        <h1 class="titulo text-primary mb-3">Iván Gonzalo Cabrera</h1>
-        <p class="text-muted mb-1"><i class="fas fa-map-marker-alt me-2"></i>Corrientes, Argentina</p>
-        <p class="text-muted mb-1"><i class="fas fa-phone me-2"></i>+54 3718-506984</p>
-        <p class="text-muted"><i class="fas fa-envelope me-2"></i>ivangonzalo1253@gmail.com</p>
-        <div class="mt-3">
-          <a class="btn btn-outline-primary me-2" href="https://github.com/Ivancho1253" target="_blank">
-            <i class="fab fa-github"></i> GitHub
-          </a>
-          <a class="btn btn-outline-info" href="https://www.linkedin.com/in/ivan-cabrera-128a60281/" target="_blank">
-            <i class="fab fa-linkedin"></i> LinkedIn
-          </a>
+    <!-- HEADER SECTION -->
+    <div class="header-gradient p-5 rounded-top-4 text-white position-relative overflow-hidden">
+      <div class="header-pattern"></div>
+      <div class="row align-items-center position-relative">
+        <div class="col-lg-8 mb-4 mb-lg-0">
+          <h1 class="display-4 fw-bold mb-2 text-white name-title">IVÁN GONZALO CABRERA</h1>
+          <h2 class="h4 mb-4 text-white-90 fw-light subtitle-role">QA Automation Tester | Software Testing | Analista en Sistemas</h2>
+          
+          <div class="contact-info mb-4">
+            <div class="d-flex flex-wrap gap-3">
+              <span class="contact-item"><i class="fas fa-map-marker-alt me-2"></i>Corrientes, Argentina</span>
+              <span class="contact-item"><i class="fas fa-phone me-2"></i>+54 3718506984</span>
+              <span class="contact-item"><i class="fas fa-envelope me-2"></i>ivangonzalo1253@gmail.com</span>
+            </div>
+          </div>
+
+          <div class="d-flex flex-wrap gap-2">
+            <a class="btn btn-light btn-sm shadow-sm" href="https://www.linkedin.com/in/ivan-cabrera-128a60281/" target="_blank">
+              <i class="fab fa-linkedin me-1"></i> LinkedIn
+            </a>
+            <a class="btn btn-light btn-sm shadow-sm" href="https://github.com/Ivancho1253" target="_blank">
+              <i class="fab fa-github me-1"></i> GitHub
+            </a>
+            <a class="btn btn-light btn-sm shadow-sm" href="https://ivangonzalodev.netlify.app/" target="_blank">
+              <i class="fas fa-globe me-1"></i> CV Web
+            </a>
+            <button class="btn btn-danger btn-sm shadow-sm" id="download-pdf" onclick="downloadPDF()">
+              <i class="fas fa-file-pdf me-1"></i>Descargar PDF
+            </button>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 text-center">
+          <div class="profile-image-container">
+            <img
+              src="https://lh3.googleusercontent.com/a/ACg8ocL86WqHhwqr-d6YKm8mQeSelXZtptGEPO4CA9amjs-HKzrYWxCmsg=s576-c-no"
+              alt="Iván Cabrera"
+              class="profile-image"
+            >
+          </div>
         </div>
       </div>
-      <div class="col-md-4 text-center">
-        <img
-          src="https://lh3.googleusercontent.com/a/ACg8ocL86WqHhwqr-d6YKm8mQeSelXZtptGEPO4CA9amjs-HKzrYWxCmsg=s576-c-no"
-          alt="Iván Cabrera"
-          class="img-fluid rounded-circle shadow-sm"
-          style="max-width:180px;"
-        >
-      </div>
-    </header>
+    </div>
 
-    <section class="mb-4">
-      <h2 class="h5 border-start border-4 border-primary ps-3 text-primary">Perfil Profesional</h2>
-      <p>Soy estudiante de Ingeniería en Sistemas de Información, apasionado por el desarrollo de software, la seguridad informática y la automatización de pruebas. Tengo experiencia en testing de APIs y aplicaciones web, así como en el análisis de vulnerabilidades en entornos Linux. Busco integrarme a un equipo donde pueda aplicar mis conocimientos técnicos, aprender metodologías ágiles y contribuir al desarrollo de soluciones innovadoras.</p>
-    </section>
+    <!-- MAIN CONTENT -->
+    <div class="p-5">
 
-    <section class="mb-4">
-      <h2 class="h5 border-start border-4 border-primary ps-3 text-primary">Educación</h2>
-      <ul class="list-unstyled">
-        <li><strong>Primario</strong> – Instituto Santa Catalina Laboure (2011–2016)</li>
-        <li><strong>Secundario</strong> – Instituto Santa Catalina Laboure (2017–2022)</li>
-        <li><strong>Universitario</strong> – Universidad Cuenca del Plata (2023–Actualidad)</li>
-      </ul>
-    </section>
+      <!-- PERFIL PROFESIONAL -->
+      <section class="mb-5">
+        <h2 class="section-title mb-4">
+          <i class="fas fa-user-tie me-2 title-icon"></i>Perfil Profesional
+        </h2>
+        <p class="text-justify lh-lg text-secondary">Analista en Sistemas y estudiante de 4º año de Ingeniería en Sistemas de Información en la Universidad de la Cuenca del Plata, con enfoque en <strong>Quality Assurance (QA)</strong>, testing automatizado y seguridad informática. Poseo experiencia en testing de APIs, automatización de pruebas end-to-end y validación de aplicaciones web, utilizando herramientas como <strong>Playwright</strong>, <strong>Postman</strong> y <strong>Jest</strong>. Trabajo bajo metodologías QA, Agile y Kanban, aplicando buenas prácticas de desarrollo y testing en entornos modernos.</p>
+        <p class="text-justify lh-lg text-secondary">También cuento con conocimientos en desarrollo frontend con <strong>JavaScript</strong>, <strong>React</strong> y <strong>Vue.js</strong>, lo que me permite comprender el ciclo completo de desarrollo de software y colaborar eficazmente con equipos técnicos.</p>
+        <p class="text-justify lh-lg text-secondary">Tengo experiencia utilizando <strong>Docker</strong>, <strong>GitHub Actions</strong>, <strong>CI/CD pipelines</strong> y <strong>Linux CLI avanzado</strong>, aplicando herramientas modernas de testing, automatización y deployment para mejorar la calidad del software mediante detección temprana de errores, automatización de pruebas y mejora continua del proceso de desarrollo.</p>
+      </section>
 
-    <section class="mb-4">
-      <h2 class="h5 border-start border-4 border-primary ps-3 text-primary">Experiencia</h2>
-      <ul class="list-unstyled">
-        <li><strong>Tester de Software API</strong> – Uso de Postman para validar endpoints REST y automatizar pruebas funcionales.</li>
-        <li><strong>Tester de Software Web</strong> – Implementación de test end-to-end con Playwright, verificación de flujos críticos en interfaces web.</li>
-        <li><strong>Desarrollador de Software</strong> – Desarrollo de componentes y UI con React/Vue y Node.js.</li>
-        <li><strong>Seguridad Informática</strong> – Detección de vulnerabilidades mediante herramientas OWASP y uso de Kali Linux para pruebas de penetración y testeo de hacking.</li>
-      </ul>
-    </section>
+      <!-- EXPERIENCIA TÉCNICA -->
+      <section class="mb-5">
+        <h2 class="section-title mb-4">
+          <i class="fas fa-briefcase me-2 title-icon"></i>Experiencia Técnica
+        </h2>
+        
+        <div class="experience-card mb-4">
+          <div class="d-flex align-items-start">
+            <div class="icon-box me-3">
+              <i class="fas fa-vial"></i>
+            </div>
+            <div class="flex-grow-1">
+              <h3 class="h5 fw-bold mb-2 text-dark">QA Automation Tester</h3>
+              <p class="text-secondary mb-3">Participación en proyectos académicos y personales realizando tareas de Quality Assurance y testing automatizado en aplicaciones web y APIs.</p>
+              <ul class="custom-list">
+                <li>Automatización de flujos críticos reduciendo errores funcionales en testing manual</li>
+                <li>Validación de endpoints REST asegurando consistencia de respuestas con Postman</li>
+                <li>Automatización de pruebas E2E con Playwright para simulación de comportamiento de usuario</li>
+                <li>Testing de APIs REST, validación de status codes y estructuras de respuesta</li>
+                <li>Identificación, documentación y seguimiento de errores funcionales</li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
-    <section class="mb-4">
-      <h2 class="h5 border-start border-4 border-primary ps-3 text-primary">Conocimientos Técnicos</h2>
-      <ul class="list-unstyled">
-        <li><strong>Lenguajes:</strong> Java, TS, JS, Python, C, C++</li>
-        <li><strong>Frameworks:</strong> React, Node.js, Express.js, Deno, Vue.js, Bootstrap</li>
-        <li><strong>Testing y Dev Tools:</strong> Postman, Jest, Playwright, Git, VS Code, Figma</li>
-        <li><strong>Bases de Datos:</strong> MySQL, MongoDB, PostgreSQKL (SupaBase)</li>
-        <li><strong>Herramientas Tecnologicas:</strong> Git, VS Code, Figma, Playwright, Jest, Postman</li>
-        <li><strong>Sistemas Operativos:</strong> Windows, Linux (Kali Linux)</li>
-      </ul>
-    </section>
+        <div class="experience-card mb-4">
+          <div class="d-flex align-items-start">
+            <div class="icon-box me-3">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="flex-grow-1">
+              <h3 class="h5 fw-bold mb-2 text-dark">Desarrollo Web</h3>
+              <ul class="custom-list mb-0">
+                <li>Desarrollo de interfaces web modernas con React y Vue.js</li>
+                <li>Creación de APIs y servicios backend con Node.js y Express.js</li>
+                <li>Implementación de aplicaciones dinámicas con JavaScript y TypeScript</li>
+                <li>Desarrollo de componentes frontend con foco en UX/UI</li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
-    <section class="mb-4">
-      <h2 class="h5 border-start border-4 border-primary ps-3 text-primary">Idiomas</h2>
-      <ul class="list-unstyled">
-        <li>Español: Nativo</li>
-        <li>Inglés: Intermedio/Avanzado (B2)</li>
-      </ul>
-    </section>
+        <div class="experience-card">
+          <div class="d-flex align-items-start">
+            <div class="icon-box me-3">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <div class="flex-grow-1">
+              <h3 class="h5 fw-bold mb-2 text-dark">Seguridad Informática</h3>
+              <ul class="custom-list mb-0">
+                <li>Análisis de vulnerabilidades con herramientas basadas en OWASP</li>
+                <li>Uso de Kali Linux para pruebas de seguridad y pentesting</li>
+                <li>Desarrollo de sistema de detección de ataques DDoS en Linux</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <section class="mb-4 text-primary">
-      <a class="btn btn-primary btn-lg" href="certificados.html">
-        <i class="fas fa-certificate me-2"></i>Ver Trabajos y Certificados
-      </a>
-    </section>
+      <!-- PROYECTOS DESTACADOS -->
+      <section class="mb-5">
+        <h2 class="section-title mb-4">
+          <i class="fas fa-rocket me-2 title-icon"></i>Proyectos Destacados
+        </h2>
+        
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="project-card h-100">
+              <div class="project-header mb-3">
+                <h3 class="h6 fw-bold mb-2">Sistema de Turnos – Consultorio Odontológico AyD</h3>
+                <a href="https://consultorioayd.netlify.app/" target="_blank" class="project-link">
+                  <i class="fas fa-external-link-alt me-1"></i>Ver proyecto
+                </a>
+              </div>
+              <p class="text-secondary small mb-2">Plataforma web para gestión de turnos médicos con interfaz intuitiva para pacientes y administración de citas.</p>
+              <div class="tech-tags">
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">React</span>
+              </div>
+            </div>
+          </div>
 
+          <div class="col-md-6">
+            <div class="project-card h-100">
+              <div class="project-header mb-3">
+                <h3 class="h6 fw-bold mb-2">MiG Network – Plataforma de Software</h3>
+                <a href="https://mignetwork.netlify.app/" target="_blank" class="project-link">
+                  <i class="fas fa-external-link-alt me-1"></i>Ver proyecto
+                </a>
+              </div>
+              <p class="text-secondary small mb-2">Plataforma para desarrollo de soluciones tecnológicas empresariales, enfocada en desarrollo web y diseño de interfaces.</p>
+              <div class="tech-tags">
+                <span class="tech-tag">Web Development</span>
+                <span class="tech-tag">UI/UX</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="project-card h-100">
+              <div class="project-header mb-3">
+                <h3 class="h6 fw-bold mb-2">Sistema de Detección de Ataques DDoS</h3>
+              </div>
+              <p class="text-secondary small mb-2">Proyecto de seguridad informática en Kali Linux para análisis y detección de tráfico malicioso, identificación de patrones y evaluación de vulnerabilidades.</p>
+              <div class="tech-tags">
+                <span class="tech-tag">Kali Linux</span>
+                <span class="tech-tag">Security</span>
+                <span class="tech-tag">Network Analysis</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EDUCACIÓN -->
+      <section class="mb-5">
+        <h2 class="section-title mb-4">
+          <i class="fas fa-graduation-cap me-2 title-icon"></i>Educación
+        </h2>
+        <div class="education-card">
+          <div class="d-flex align-items-start">
+            <div class="education-icon me-3">
+              <i class="fas fa-university"></i>
+            </div>
+            <div>
+              <h3 class="h6 fw-bold mb-1">Ingeniería en Sistemas de Información</h3>
+              <p class="text-primary fw-semibold mb-1">Universidad de la Cuenca del Plata</p>
+              <p class="text-secondary small mb-1"><i class="far fa-calendar-alt me-1"></i>2023 - Actualidad</p>
+              <p class="text-secondary small mb-0">Cursando 4º año • Título intermedio en curso: <strong>Analista en Sistemas</strong></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- QA SKILLS -->
+      <section class="mb-5">
+        <h2 class="section-title mb-4">
+          <i class="fas fa-check-double me-2 title-icon"></i>QA Skills
+        </h2>
+        <div class="row g-3">
+          <div class="col-md-3 col-6">
+            <div class="skill-badge">
+              <i class="fas fa-check-circle me-2"></i>Test Case Design
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="skill-badge">
+              <i class="fas fa-check-circle me-2"></i>API Testing
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="skill-badge">
+              <i class="fas fa-check-circle me-2"></i>Automated Testing
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="skill-badge">
+              <i class="fas fa-check-circle me-2"></i>E2E Testing
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="skill-badge">
+              <i class="fas fa-check-circle me-2"></i>Functional Testing
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="skill-badge">
+              <i class="fas fa-check-circle me-2"></i>Bug Reporting
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="skill-badge">
+              <i class="fas fa-check-circle me-2"></i>CI/CD Testing
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HABILIDADES TÉCNICAS -->
+      <section class="mb-5">
+        <h2 class="section-title mb-4">
+          <i class="fas fa-laptop-code me-2 title-icon"></i>Habilidades Técnicas
+        </h2>
+        
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="skill-category">
+              <h3 class="skill-category-title"><i class="fas fa-code me-2"></i>Lenguajes</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">TypeScript</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">C</span>
+                <span class="skill-tag">C++</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="skill-category">
+              <h3 class="skill-category-title"><i class="fas fa-layer-group me-2"></i>Frameworks</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">Vue.js</span>
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">Express.js</span>
+                <span class="skill-tag">Deno</span>
+                <span class="skill-tag">Bootstrap</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="skill-category">
+              <h3 class="skill-category-title"><i class="fas fa-vial me-2"></i>Testing / QA</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">Playwright</span>
+                <span class="skill-tag">Postman</span>
+                <span class="skill-tag">Jest</span>
+                <span class="skill-tag">E2E Testing</span>
+                <span class="skill-tag">API Testing</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="skill-category">
+              <h3 class="skill-category-title"><i class="fas fa-server me-2"></i>DevOps / CI/CD</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">GitHub Actions</span>
+                <span class="skill-tag">CI/CD Pipelines</span>
+                <span class="skill-tag">Automation</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="skill-category">
+              <h3 class="skill-category-title"><i class="fas fa-database me-2"></i>Bases de Datos</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">MySQL</span>
+                <span class="skill-tag">MongoDB</span>
+                <span class="skill-tag">PostgreSQL</span>
+                <span class="skill-tag">Supabase</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="skill-category">
+              <h3 class="skill-category-title"><i class="fas fa-tools me-2"></i>Herramientas</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">VS Code</span>
+                <span class="skill-tag">Figma</span>
+                <span class="skill-tag">Linux CLI</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- UI/UX SKILLS -->
+      <section class="mb-5">
+        <h2 class="section-title mb-4">
+          <i class="fas fa-palette me-2 title-icon"></i>UI / UX Skills
+        </h2>
+        <div class="row g-3">
+          <div class="col-md-3 col-6">
+            <div class="skill-badge-alt">
+              <i class="fas fa-paint-brush me-2"></i>UI Design
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="skill-badge-alt">
+              <i class="fas fa-paint-brush me-2"></i>UX Design
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="skill-badge-alt">
+              <i class="fas fa-paint-brush me-2"></i>Wireframing
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="skill-badge-alt">
+              <i class="fas fa-paint-brush me-2"></i>Prototyping
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="skill-badge-alt">
+              <i class="fas fa-paint-brush me-2"></i>Responsive Design
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="skill-badge-alt">
+              <i class="fas fa-paint-brush me-2"></i>Component Design
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="skill-badge-alt">
+              <i class="fas fa-paint-brush me-2"></i>UI Testing
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="skill-badge-alt">
+              <i class="fas fa-paint-brush me-2"></i>Figma
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- METODOLOGÍAS -->
+      <section class="mb-5">
+        <h2 class="section-title mb-4">
+          <i class="fas fa-project-diagram me-2 title-icon"></i>Metodologías de Trabajo
+        </h2>
+        <div class="d-flex flex-wrap gap-3">
+          <div class="methodology-badge">
+            <i class="fas fa-check me-2"></i>QA Methodologies
+          </div>
+          <div class="methodology-badge">
+            <i class="fas fa-sync-alt me-2"></i>Agile
+          </div>
+          <div class="methodology-badge">
+            <i class="fas fa-columns me-2"></i>Kanban
+          </div>
+        </div>
+      </section>
+
+      <!-- CERTIFICACIONES -->
+      <section class="mb-5">
+        <h2 class="section-title mb-4">
+          <i class="fas fa-certificate me-2 title-icon"></i>Certificaciones y Participación Académica
+        </h2>
+        
+        <div class="certificate-item mb-3">
+          <div class="d-flex align-items-start">
+            <div class="certificate-icon me-3">
+              <i class="fas fa-award"></i>
+            </div>
+            <div>
+              <h3 class="h6 fw-bold mb-1">XXIII Congreso Internacional en Innovación Tecnológica Informática</h3>
+              <p class="text-secondary small mb-0"><i class="fas fa-university me-2"></i>Universidad Abierta Interamericana • 2025</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="certificate-item mb-3">
+          <div class="d-flex align-items-start">
+            <div class="certificate-icon me-3">
+              <i class="fas fa-award"></i>
+            </div>
+            <div>
+              <h3 class="h6 fw-bold mb-1">Conferencia: Inteligencia Artificial y Educación – Transformación Digital</h3>
+              <p class="text-secondary small mb-0"><i class="fas fa-university me-2"></i>Universidad de la Cuenca del Plata • 2025</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="certificate-item">
+          <div class="d-flex align-items-start">
+            <div class="certificate-icon me-3">
+              <i class="fas fa-award"></i>
+            </div>
+            <div>
+              <h3 class="h6 fw-bold mb-1">Curso: ABC del Emprendedurismo</h3>
+              <p class="text-secondary small mb-0"><i class="fas fa-university me-2"></i>Universidad de la Cuenca del Plata • 2023</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- IDIOMAS -->
+      <section class="mb-4">
+        <h2 class="section-title mb-4">
+          <i class="fas fa-language me-2 title-icon"></i>Idiomas
+        </h2>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="language-card">
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <h3 class="h6 fw-bold mb-1">Español</h3>
+                  <p class="text-secondary small mb-0">Nativo</p>
+                </div>
+                <div class="language-level">
+                  <i class="fas fa-circle"></i>
+                  <i class="fas fa-circle"></i>
+                  <i class="fas fa-circle"></i>
+                  <i class="fas fa-circle"></i>
+                  <i class="fas fa-circle"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="language-card">
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <h3 class="h6 fw-bold mb-1">Inglés</h3>
+                  <p class="text-secondary small mb-0">Intermedio / Avanzado (B2)</p>
+                </div>
+                <div class="language-level">
+                  <i class="fas fa-circle"></i>
+                  <i class="fas fa-circle"></i>
+                  <i class="fas fa-circle"></i>
+                  <i class="fas fa-circle"></i>
+                  <i class="far fa-circle"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BOTÓN CERTIFICADOS -->
+      <section class="text-center py-4 hide-in-pdf">
+        <a class="btn btn-primary btn-lg px-5 shadow-sm" href="certificados.html">
+          <i class="fas fa-certificate me-2"></i>Ver Trabajos y Certificados
+        </a>
+      </section>
+
+    </div>
   </div>
 
   <!-- Bootstrap JS (bundle con Popper) desde CDN -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  
+  <!-- Script para generar PDF -->
+  <script>
+    function downloadPDF() {
+      const button = document.getElementById('download-pdf');
+      const element = document.getElementById('cv-content');
+      
+      // Ocultar botón de descarga
+      button.style.display = 'none';
+      const hideElements = document.querySelectorAll('.hide-in-pdf');
+      hideElements.forEach(el => el.style.display = 'none');
+      
+      // Guardar estilos originales
+      const originalStyles = {
+        maxWidth: element.style.maxWidth,
+        width: element.style.width,
+        margin: element.style.margin,
+        padding: element.style.padding
+      };
+      
+      // Aplicar estilos para PDF - ANCHO COMPLETO
+      element.classList.add('generating-pdf');
+      element.style.maxWidth = 'none';
+      element.style.width = '100%';
+      element.style.margin = '0';
+      element.style.padding = '0';
+      
+      // Configuración para capturar a ancho completo de A4
+      const A4_WIDTH_PX = 794; // A4 width at 96 DPI
+      
+      setTimeout(() => {
+        const opt = {
+          margin: 0,
+          filename: 'CV_Ivan_Gonzalo_Cabrera.pdf',
+          image: { 
+            type: 'jpeg', 
+            quality: 0.98 
+          },
+          html2canvas: { 
+            scale: 3,
+            useCORS: true,
+            logging: false,
+            letterRendering: true,
+            allowTaint: true,
+            width: A4_WIDTH_PX,
+            windowWidth: A4_WIDTH_PX,
+            x: 0,
+            y: 0,
+            scrollX: 0,
+            scrollY: 0
+          },
+          jsPDF: { 
+            unit: 'px', 
+            format: [A4_WIDTH_PX, 1123], // A4 at 96 DPI
+            orientation: 'portrait',
+            compress: true
+          },
+          pagebreak: { 
+            mode: ['avoid-all', 'css'],
+            avoid: ['.experience-card', '.project-card', '.education-card', '.certificate-item', '.skill-category', 'section']
+          }
+        };
+
+        html2pdf().from(element).set(opt).toPdf().get('pdf').then(function(pdf) {
+          // Ajustar márgenes después de crear el PDF
+          const totalPages = pdf.internal.getNumberOfPages();
+          for (let i = 1; i <= totalPages; i++) {
+            pdf.setPage(i);
+          }
+          pdf.save('CV_Ivan_Gonzalo_Cabrera.pdf');
+        }).then(() => {
+          // Restaurar estilos
+          element.style.maxWidth = originalStyles.maxWidth;
+          element.style.width = originalStyles.width;
+          element.style.margin = originalStyles.margin;
+          element.style.padding = originalStyles.padding;
+          button.style.display = '';
+          hideElements.forEach(el => el.style.display = '');
+          element.classList.remove('generating-pdf');
+        }).catch((err) => {
+          console.error('Error generando PDF:', err);
+          // Restaurar en caso de error
+          element.style.maxWidth = originalStyles.maxWidth;
+          element.style.width = originalStyles.width;
+          element.style.margin = originalStyles.margin;
+          element.style.padding = originalStyles.padding;
+          button.style.display = '';
+          hideElements.forEach(el => el.style.display = '');
+          element.classList.remove('generating-pdf');
+        });
+      }, 150);
+    }
+  </script>
 </body>
 </html>
